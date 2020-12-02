@@ -45,4 +45,42 @@
 
     "matlab.mlintpath": "C:\\Program Files\\MATLAB\\R2020a\\bin\\win64\\mlint.exe"
 
+        "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "FIX",
+        "TODO",
+    ],
+    
+    "todo-tree.highlights.defaultHighlight": {
+        "type": "text-and-comment",
+        "foreground": "red",
+        "background": "white",
+        "opacity": 50,
+        "iconColour": "orange"
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "gear",
+            "foreground": "white",
+            "background": "#229933",
+            "iconColour": "green",
+            "gutterIcon": true
+        },
+        "FIXME": {
+            "foreground": "white",
+            // "background": "#992233",
+            "background": "#f57242",
+            "iconColour": "#f57242",
+            "gutterIcon": true,
+        },
+    },
+    "todo-tree.general.tagGroups": {
+        "FIXME": [
+            "FIXME",
+            "FIXIT",
+            "FIX",
+        ]
+    },
 }
