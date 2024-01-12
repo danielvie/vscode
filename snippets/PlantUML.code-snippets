@@ -1,0 +1,47 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Example PlantUML": {
+		"prefix": "!puml",
+		"body": [
+			"@startuml diagram",
+			"",
+			"\tset namespaceSeparator :: ",
+			"\tclass DIV::A {",
+			"\t\tfield1 : float",
+			"\t\tfield2 : int",
+			"",
+			"\t\tmethod1() float",
+			"\t}",
+			"",
+			"\tclass DIV::C {",
+			"\t\tfield1 : float",
+			"\t\tfield2 : int",
+			"",
+			"\t\tmethod1() float",
+			"\t}",
+			"",
+			"\tabstract class B {",
+			"\t\tfield1 : str",
+			"\t\tfield1: int",
+			"",
+			"\t\t{abstract} methodq() void",
+			"\t}",
+			"",
+			"\tDIV::A <-- B",
+			"",
+			"\tclass C implements D",
+			"\tclass E extends F",
+			"",
+			"@enduml",
+		]
+		
+	}
+
+
+}

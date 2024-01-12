@@ -1,0 +1,472 @@
+{
+  "latex-workshop.view.pdf.viewer": "browser",
+  "editor.minimap.enabled": false,
+  "editor.fontLigatures": false,
+
+  /*
+   * VIM configs
+   */
+  "vim.leader": "<space>",
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.targets.enable": true,
+  "vim.replaceWithRegister": true, // gr[], griw
+
+  "vim.smartRelativeLine": true,
+  "vim.disableExtension": false,
+
+  "vim.normalModeKeyBindings": [
+    // playgroung normal
+    // replace sequence of chars to "c","h","a","r","s"
+    {
+      "before": ["<leader>", "<leader>", "y"],
+      "after": [ "V", ":", "s", "/", ".", "/", "\"", "&", "\"", ",", "/", "g", "<cr>", "$", "x", "_" ]
+    },
+
+    // macro q
+    {
+      "before": ["<S-q>"],
+      "after": ["@", "q"]
+    },
+    // macro w
+    {
+      "before": ["<S-w>"],
+      "after": ["@", "w"]
+    },
+    // macro e
+    {
+      "before": ["<S-e>"],
+      "after": ["@", "e"]
+    },
+    {
+      "before": ["<S-e>"],
+      "after": ["v","f","$","c","\\","h","i","g","h","l","i","g","h","t","{","}","<Esc>","P",";"]
+    },
+
+    {
+      "before": ["<S-r>"],
+      "after": ["_", "9", "0", "l", "b", "i", "<cr>", "<esc>"]
+    },
+    {
+      "before": ["<S-t>"],
+      "after": [":", ".", "!", "s", "h", "<cr>"]
+    },
+
+    // saving <leader> commands
+    { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
+    {
+      "before": ["leader", "b"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["leader", "n"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+    {
+      "before": ["leader", "o"],
+      "commands": ["workbench.action.files.openFile"]
+    },
+    { "before": ["leader", "r"], "commands": ["workbench.action.gotoSymbol"] },
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+
+    // split
+    { "before": ["leader", "|"], "commands": [":vsplit"] },
+    { "before": ["leader", "-"], "commands": [":split"] },
+    { "before": ["leader", "s", "h"], "commands": [":split"] },
+    { "before": ["leader", "s", "v"], "commands": [":vsplit"] },
+
+    // select all
+    { "before": ["leader", "t"], "after": ["g", "g", "V", "G"] },
+
+    // view description
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+
+    // { "before": ["<s-i>"], "commands": ["editor.action.peekDefinition"] },
+
+    // view problem
+    { "before": ["g", "K"], "commands": ["editor.action.marker.next"] },
+
+    // search
+    {
+      "before": ["S"],
+      "after": [":", "%", "s", "/", "/", "g", "<left>", "<left>"]
+    },
+
+    // navigation
+    { "before": ["g", "l"], "after": ["$"] },
+    { "before": ["g", "h"], "after": ["^"] },
+    { "before": ["<s-h>"], "commands": [":bprevious"] },
+    { "before": ["<s-l>"], "commands": [":bnext"] },
+
+    // number navigation
+    { "before": ["g", "7"], "after": ["`", "J"] },
+    { "before": ["g", "8"], "after": ["`", "K"] },
+    { "before": ["g", "9"], "after": ["`", "L"] },
+
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.moveEditorLeftInGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.moveEditorRightInGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusNextGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusPreviousGroup"]
+    },
+
+    // harpoon
+    { "before": ["<leader>", "a"], "commands": ["vscode-harpoon.addEditor"] },
+    { "before": ["<leader>", "e"], "commands": ["vscode-harpoon.editEditors"] },
+    {
+      "before": ["<leader>", "p", "e"],
+      "commands": ["vscode-harpoon.editorQuickPick"]
+    },
+    { "before": ["<leader>", "1"], "commands": ["vscode-harpoon.gotoEditor1"] },
+    { "before": ["<leader>", "2"], "commands": ["vscode-harpoon.gotoEditor2"] },
+    { "before": ["<leader>", "3"], "commands": ["vscode-harpoon.gotoEditor3"] },
+    { "before": ["<leader>", "4"], "commands": ["vscode-harpoon.gotoEditor4"] },
+    { "before": ["<leader>", "5"], "commands": ["vscode-harpoon.gotoEditor5"] },
+    { "before": ["<leader>", "6"], "commands": ["vscode-harpoon.gotoEditor6"] },
+
+    // shortcuts
+    {
+      "before": ["leader", "s", "r"],
+      "after": [ "a", "", "\\", "i", "n", "", "\\", "m", "a", "t", "h", "b", "b", "{", "R", "}", "^", "{", "}", "<esc>"]
+    },
+
+    // run python
+    // { "before": ["<leader>", "u"], "commands": ["python.execInTerminal-icon"] },
+
+    // shortcuts latex colors
+    {
+      "before": ["<leader>", "c", "p"],
+      "after": [ "i", "\\", "p", "u", "r", "p", "l", "e", "{", "}", "<esc>", "i", "<cr>"]
+    },
+
+    // ^infty
+    {
+      "before": ["<leader>", "<leader>", "i"],
+      "after": ["a", "^", "\\", "i", "n", "f", "t", "y", "<esc>"]
+    },
+
+    // a[k]
+    {
+      "before": ["<leader>", "<leader>", "k"],
+      "after": ["a", "[", "k", "]", "<esc>"]
+    },
+
+
+    // run in terminal
+    {
+      "before": ["<leader>", "v"],
+      "after": [],
+      "commands": [{ "command": "runInTerminal.run", "args": { "name": "r" } }]
+    }
+  ],
+
+  "runInTerminal.commands": [{ "match": "\\.*", "name": "r", "cmd": "make" }],
+
+  "vim.visualModeKeyBindings": [
+    // playground visualmode
+
+    // surround with $$ and add ${}^\infty$
+    {
+      "before": ["q"],
+      "after": ["c", "\\", ";", "\\","m","a","t","h","r","m","{","<Esc>","p"]
+    },
+
+    // macro <s-e>
+    {
+      "before": ["<S-e>"],
+      "after": ["c","\\","h","i","g","h","l","i","g","h","t","{","}","<Esc>","P"]
+    },
+    
+    {
+      "before": ["<leader>", "s"],
+      "after": [ ":","s","/","/","g","<left>","<left>"]
+    },
+
+    {
+      "before": ["<leader>", "i"],
+      "after": ["c", "$", "$", "<esc>", "P", "a", "^", "\\", "i", "n", "f", "t", "y", "<esc>", "l"]
+    },
+
+    // indent lines
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+
+    // move lines
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+
+    // extention align
+    { "before": ["<leader>", "a"], "commands": ["extension.align"] },
+
+    // shortcuts. latex colors
+    // green
+    {
+      "before": ["<leader>", "c", "g"],
+      "after": ["c", "\\", "g", "r", "e", "e", "n", "{", "}", "<esc>", "P"]
+    },
+    // orange
+    {
+      "before": ["<leader>", "c", "o"],
+      "after": ["c", "\\", "o", "r", "a", "n", "g", "e", "{", "}", "<esc>", "P"]
+    },
+    // blue
+    {
+      "before": ["<leader>", "c", "b"],
+      "after": ["c", "\\", "b", "l", "u", "e", "{", "}", "<esc>", "P"]
+    },
+    // purple
+    {
+      "before": ["<leader>", "c", "p"],
+      "after": ["c", "\\", "p", "u", "r", "p", "l", "e", "{", "<cr>", "<Esc>", "p", "k", "m", "J", "v", "i", "{", ">", "<Esc>", "`", "J", "d", "d", "k", "k"]
+    },
+
+    // comentario
+    {
+      "before": ["<leader>", "c", "c"],
+      "after": ["c","\\","c","o","m","e","n","t","a","r","i","o","{","<cr>","<Esc>","p","k","m","J","v","i","{",">","<Esc>","`","J","d","d","k","k"]
+    },
+    {
+      "before": ["<leader>", "p", "p"],
+      "after": ["c","\\","p","u","r","p","l","e","{","<cr>","<esc>","P","g","v","j","j","o","j",">","o","<esc>","d","d"]
+    },
+
+    // textbold
+    {
+      "before": ["<leader>", "t", "b"],
+      "after": ["c", "\\", "t", "e", "x", "t", "b", "f", "{", "}", "<esc>", "P"]
+    },
+
+    // italic 
+    {
+      "before": ["<leader>", "t", "i"],
+      "after": ["c", "\\", "t", "e", "x", "t", "i", "t", "{", "}", "<esc>", "P"]
+    },
+
+    //copyandstayinposition
+    // { "before": ["y"], "after": ["y", "g", "v", "<esc>"] },
+    { "before": ["Y"], "after": ["\"", "+", "y"] },
+
+    //shortcutslatex
+
+    // bar
+    {
+      "before": ["<leader>", "<leader>", "b"],
+      "after": ["c", "\\", "b", "a", "r", "{", "}", "<esc>", "P"]
+    },
+    // hat
+    {
+      "before": ["<leader>", "<leader>", "h"],
+      "after": ["c", "\\", "h", "a", "t", "{", "}", "<esc>", "P"]
+    },
+    // dot
+    {
+      "before": ["<leader>", "<leader>", "d"],
+      "after": ["c", "\\", "d", "o", "t", "{", "}", "<esc>", "P"]
+    },
+
+    //mathbold
+    {
+      "before": ["<leader>", "m", "b"],
+      "after": ["c", "\\", "m", "a", "t", "h", "b", "f", "{", "}", "<esc>", "P"]
+    }
+  ],
+
+  "vim.operatorPendingModeKeyBindings": [
+    // use H and L as operators
+    { "before": ["L"], "after": ["$"] },
+    { "before": ["H"], "after": ["^"] }
+  ],
+
+  "vim.handleKeys": {
+    "<C-n>": true,
+    "<C-f>": true
+  },
+
+  /*
+   * TODO-Tree configs
+   */
+
+  "todo-tree.highlights.defaultHighlight": {
+    "type": "text-and-comment",
+    "foreground": "#a72a2a",
+    "background": "#ffffff",
+    "opacity": 50,
+    "iconColour": "#e26212"
+  },
+
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "gear",
+      "foreground": "#ffffff",
+      "background": "#229933",
+      "iconColour": "#229933",
+      "gutterIcon": true
+    },
+    "FIXME": {
+      "foreground": "#ffffff",
+      // "background": "#992233",
+      "background": "#a83293",
+      "iconColour": "#a83293",
+      "gutterIcon": true
+    },
+    "NOTE": {
+      "icon": "comment",
+      "foreground": "#ffffff",
+      // "background": "#992233",
+      "background": "#a142e5",
+      "iconColour": "#a142e5",
+      "gutterIcon": true
+    }
+  },
+  "todo-tree.general.tagGroups": {
+    "FIXME": ["FIXME", "FIXIT", "FIX"]
+  },
+
+  "workbench.colorCustomizations": {
+    "terminal.ansiBrightBlack": "#2796d2"
+  },
+
+  "editor.codeLens": true,
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+
+  "editor.fontFamily": "'FiraCode NF', 'Fira Code', 'cascadia code', Consolas, 'Courier New', monospace",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Ubuntu (WSL)": {
+      "path": "C:\\Windows\\System32\\wsl.exe",
+      "args": ["-d", "Ubuntu"]
+    }
+  },
+  "security.workspace.trust.enabled": false,
+  "workbench.colorTheme": "Catppuccin Mocha",
+
+  "editor.trimAutoWhitespace": false,
+
+  "git.mergeEditor": true,
+  "editor.fontSize": 13,
+  "git.confirmSync": false,
+  "editor.stickyScroll.enabled": true,
+  "grammarly.files.include": [
+    "**/README.md",
+    "**/readme.md",
+    "**/*.txt",
+    "**/.*.tex"
+  ],
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "NOTE"
+  ],
+  "todo-tree.regex.regex": "((%|#|//|<!--|^\\s*\\*)\\s*($TAGS)|^\\s*- \\[ \\])",
+  "terminal.external.osxExec": "Warp.app",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "cmake.configureOnOpen": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "errorLens.enabled": true,
+  "errorLens.excludeBySource": ["ts(2304)"],
+  "errorLens.enabledDiagnosticLevels": ["error", "warning", "info", "hint"],
+
+  "debug.inlineValues": "on",
+  "editor.stickyScroll.defaultModel": "indentationModel",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "javascript",
+    "html": "html"
+  },
+
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.colorDecorators": false,
+  "zig.zls.path": "/Users/danielvieira/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+  "MATLAB.installPath": "/Applications/MATLAB_R2022a.app",
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+
+  // "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+  // "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+  // "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+  // "rust-analyzer.check.command": "clippy"
+
+
+  "scm.showIncomingChanges": "auto",
+  "scm.showOutgoingChanges": "auto",
+  
+  "terminal.integrated.stickyScroll.enabled": true,
+  "window.zoomLevel": 2,
+  "symbols.hidesExplorerArrows": false,
+  "workbench.iconTheme": "symbols",
+
+}
