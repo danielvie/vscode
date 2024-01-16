@@ -1,7 +1,92 @@
 {
-  "latex-workshop.view.pdf.viewer": "browser",
-  "editor.minimap.enabled": false,
+
+  // editorpconfig
+  // "editor.fontFamily": "'JetBrains Mono','FiraCode NF', 'Fira Code', 'cascadia code', Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'JetBrains Mono', 'Fira Code NF', 'cascadia code', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": false,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.8,
+  "editor.rulers": [80, 120],
+  "editor.renderLineHighlight": "gutter",
+  "editor.minimap.enabled": false,
+  "editor.codeLens": true,
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.trimAutoWhitespace": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.quickSuggestions": { "strings": true },
+  "editor.colorDecorators": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.stickyScroll.defaultModel": "indentationModel",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": 1.0,
+
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+
+  // "workbench.statusBar.visible": false,
+  "workbench.iconTheme": "symbols",
+  "workbench.activityBar.location": "hidden", // ctrl+q
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.editor.labelFormat": "short",
+
+  "symbols.hidesExplorerArrows": false,
+
+  "breadcrumbs.enabled": false,
+  // apc configs
+  "apc.electron": {
+    "titleBarStyle": "hiddenInset",
+    "trafficLightPosition": {
+      "x": 16,
+      "y": 10,
+    },
+    "frame": false,
+  },
+  "apc.header": {
+    "height": 36
+  },
+  "apc.font.family": "'JetBrains Mono', 'Fira Code'",
+  "apc.listRow": {
+    "height": 24
+  },
+  "apc.stylesheet": {
+    ".title-label > h2": "display: none",
+    ".editor-actions": "display: none",
+    ".nosidebar .inline-tabs-placeholder": "width: 75px",
+    ".pane-header": "padding: 0 8px",
+    ".pane-body": "padding: 8px",
+    ".split-view-view:first-child .pane-header": "display: none !important",
+    ".monaco-list-row": "border-radius: 4px;",
+    ".monaco-qorkbench .monaco-list:not(.element-focused):focus:before": "display: none;",
+  },
+
+
+  // language specific config
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+
+  "explorer.compactFolders": false,
+  "latex-workshop.view.pdf.viewer": "browser",
 
   /*
    * VIM configs
@@ -354,11 +439,7 @@
     "terminal.ansiBrightBlack": "#2796d2"
   },
 
-  "editor.codeLens": true,
-  "editor.guides.bracketPairs": true,
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 
-  "editor.fontFamily": "'FiraCode NF', 'Fira Code', 'cascadia code', Consolas, 'Courier New', monospace",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
@@ -387,14 +468,10 @@
     }
   },
   "security.workspace.trust.enabled": false,
-  "workbench.colorTheme": "Catppuccin Macchiato",
 
-  "editor.trimAutoWhitespace": false,
 
   "git.mergeEditor": true,
-  "editor.fontSize": 13,
   "git.confirmSync": false,
-  "editor.stickyScroll.enabled": true,
   "grammarly.files.include": [
     "**/README.md",
     "**/readme.md",
@@ -415,66 +492,30 @@
   "terminal.external.osxExec": "Warp.app",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "cmake.configureOnOpen": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true
-  },
+  
   "errorLens.enabled": true,
   "errorLens.excludeBySource": ["ts(2304)"],
   "errorLens.enabledDiagnosticLevels": ["error", "warning", "info", "hint"],
-
   "debug.inlineValues": "on",
-  "editor.stickyScroll.defaultModel": "indentationModel",
-  "editor.inlayHints.enabled": "offUnlessPressed",
 
   "tailwindCSS.includeLanguages": {
     "plaintext": "javascript",
     "html": "html"
   },
 
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "editor.colorDecorators": false,
-  "zig.zls.path": "/Users/danielvieira/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
-  "editor.formatOnSave": false,
-  "editor.formatOnPaste": false,
-  "editor.formatOnType": false,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.useInlineViewWhenSpaceIsLimited": false,
   "MATLAB.installPath": "/Applications/MATLAB_R2022a.app",
 
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[latex]": {
-    "editor.defaultFormatter": "James-Yu.latex-workshop"
-  },
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-
-  // "rust-analyzer.inlayHints.bindingModeHints.enable": true,
-  // "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
-  // "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
-  // "rust-analyzer.check.command": "clippy"
-
-
   "scm.showIncomingChanges": "auto",
   "scm.showOutgoingChanges": "auto",
   
   "terminal.integrated.stickyScroll.enabled": true,
-  "window.zoomLevel": 2,
-  "symbols.hidesExplorerArrows": false,
-  "workbench.iconTheme": "symbols",
   "terminal.integrated.commandsToSkipShell": [
     "language-julia.interrupt"
   ],
   "julia.symbolCacheDownload": true,
+  // "go.toolsManagement.autoUpdate": true,
 
 }
