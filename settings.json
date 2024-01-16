@@ -26,8 +26,12 @@
       "before": ["<leader>", "<leader>", "y"],
       "after": [ "V", ":", "s", "/", ".", "/", "\"", "&", "\"", ",", "/", "g", "<cr>", "$", "x", "_" ]
     },
-
+    
     // macro q
+    {
+      "before": ["q"],
+      "after": ["@", "q"]
+    },
     {
       "before": ["<S-q>"],
       "after": ["@", "q"]
@@ -383,7 +387,7 @@
     }
   },
   "security.workspace.trust.enabled": false,
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Catppuccin Macchiato",
 
   "editor.trimAutoWhitespace": false,
 
@@ -468,5 +472,9 @@
   "window.zoomLevel": 2,
   "symbols.hidesExplorerArrows": false,
   "workbench.iconTheme": "symbols",
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+  "julia.symbolCacheDownload": true,
 
 }
