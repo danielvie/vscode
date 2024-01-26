@@ -1,7 +1,5 @@
 {
 
-  // editorpconfig
-  // "editor.fontFamily": "'JetBrains Mono','FiraCode NF', 'Fira Code', 'cascadia code', Consolas, 'Courier New', monospace",
   "editor.fontFamily": "'JetBrains Mono', 'Fira Code NF', 'cascadia code', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": false,
   "editor.fontSize": 14,
@@ -13,7 +11,7 @@
   "editor.guides.bracketPairs": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.trimAutoWhitespace": false,
-  "editor.stickyScroll.enabled": true,
+  // "editor.stickyScroll.enabled": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.quickSuggestions": { "strings": true },
   "editor.colorDecorators": false,
@@ -31,7 +29,7 @@
 
   // "workbench.statusBar.visible": false,
   "workbench.iconTheme": "symbols",
-  "workbench.activityBar.location": "hidden", // ctrl+q
+  // "workbench.activityBar.location": "hidden", // ctrl+q
   "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.editor.labelFormat": "short",
 
@@ -56,7 +54,7 @@
   },
   "apc.stylesheet": {
     ".title-label > h2": "display: none",
-    ".editor-actions": "display: none",
+    // ".editor-actions": "display: none",
     ".nosidebar .inline-tabs-placeholder": "width: 75px",
     ".pane-header": "padding: 0 8px",
     ".pane-body": "padding: 8px",
@@ -109,14 +107,10 @@
     // replace sequence of chars to "c","h","a","r","s"
     {
       "before": ["<leader>", "<leader>", "y"],
-      "after": [ "V", ":", "s", "/", ".", "/", "\"", "&", "\"", ",", "/", "g", "<cr>", "$", "x", "_" ]
+      "after": [ "V", ":", "s", "/", ".", "/", "\"", "&", "\"", ",", "/", "g", "<cr>", "j", "d", "d", "k", "$", "x", "x" ]
     },
-    
+
     // macro q
-    {
-      "before": ["q"],
-      "after": ["@", "q"]
-    },
     {
       "before": ["<S-q>"],
       "after": ["@", "q"]
@@ -131,11 +125,6 @@
       "before": ["<S-e>"],
       "after": ["@", "e"]
     },
-    {
-      "before": ["<S-e>"],
-      "after": ["v","f","$","c","\\","h","i","g","h","l","i","g","h","t","{","}","<Esc>","P",";"]
-    },
-
     {
       "before": ["<S-r>"],
       "after": ["_", "9", "0", "l", "b", "i", "<cr>", "<esc>"]
@@ -187,7 +176,7 @@
     // { "before": ["<s-i>"], "commands": ["editor.action.peekDefinition"] },
 
     // view problem
-    { "before": ["g", "K"], "commands": ["editor.action.marker.next"] },
+    { "before": ["g", "k"], "commands": ["editor.action.marker.next"] },
 
     // search
     {
@@ -287,7 +276,9 @@
     // macro <s-e>
     {
       "before": ["<S-e>"],
-      "after": ["c","\\","h","i","g","h","l","i","g","h","t","{","}","<Esc>","P"]
+      "after": ["c","\\","[","\\","<Esc>","i","<Cr>","<Esc>","O",
+        "\\","b","e","g","i","n","{","a","l","i","g","n","e","d","<Esc>","o",
+        "\\","e","n","d","{","a","l","i","g","n","e","d","}","<Esc>","P"]
     },
     
     {
@@ -355,9 +346,8 @@
       "after": ["c", "\\", "t", "e", "x", "t", "i", "t", "{", "}", "<esc>", "P"]
     },
 
-    //copyandstayinposition
-    // { "before": ["y"], "after": ["y", "g", "v", "<esc>"] },
-    { "before": ["Y"], "after": ["\"", "+", "y"] },
+    // copy to keyboard
+    { "before": ["<S-y>"], "after": ["\"", "+", "y"] },
 
     //shortcutslatex
 
@@ -516,6 +506,42 @@
     "language-julia.interrupt"
   ],
   "julia.symbolCacheDownload": true,
-  // "go.toolsManagement.autoUpdate": true,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "cSpell.customDictionaries": {},
+  "cSpell.enableFiletypes": [
+    "!asciidoc",
+    "!c",
+    "!cpp",
+    "!scminput",
+    "!scss",
+    "!swift",
+    "!typescript"
+  ],
+  "cSpell.userWords": [
+    "Abft",
+    "Abtt",
+    "Benmiloud",
+    "bigg",
+    "Bigr",
+    "Cbtt",
+    "dotsi",
+    "dotsm",
+    "dotso",
+    "egidio",
+    "FMINCON",
+    "Harrop",
+    "infty",
+    "intlin",
+    "julia",
+    "katex",
+    "Kawakami",
+    "Kienitz",
+    "mathbf",
+    "mathjax",
+    "mathrm",
+    "MILP",
+    "overbrace",
+    "underbrace"
+  ],
 
 }
