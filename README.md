@@ -5,6 +5,7 @@ general
 ```
 git pager = `delta`
 
+git config --global core.editor "vim"
 git config --global core.pager delta
 
 git config --global core.autostash true
