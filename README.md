@@ -31,30 +31,30 @@ git commit --amend --reset-author
 alias
 
 ```
-# Git aliases
 [alias]
     i           = init
     br          = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
     br2         = branch --all --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' 
+    bra         = br --all
     changed     = whatchanged -n 1
     changes     = whatchanged -n 1
     cfg         = config --edit --global
     cg          = config --edit --global
     ci          = commit
     cie         = ci --allow-empty
-    cii         = ci --amend
     co          = checkout
     com         = checkout master
     compare     = diff --name-status
-    comparetree = "!f() { git compare $1 | gtree; }; f"
+    comparetree = "!f() { git compare $1 | gtree;  }; f"
     coo         = checkout -
     cow         = checkout work
     fe          = fetch
-    getbr       = "!f() { git co -b temp_Branch_D0nV1; git co $1; git res temp_Branch_D0nV1; git br -D temp_Branch_D0nV1;}; f"
-    gettag      = "!f() { git tag -d $1; git tag $1;}; f"
-    tagg        = "!f() { git tag -d $1; git tag $1;}; f"
-    goto        = "!f() { git co -b temp_Branch_D0nV1; git reset --soft $1; git co $1; git br -D temp_Branch_D0nV1;}; f"
+    getbr       = "!f() { git co -b temp_Branch_D0nV1; git co $1; git res temp_Branch_D0nV1; git br -D temp_Branch_D0nV1; }; f"
+    gettag      = "!f() { git tag -d $1; git tag $1; }; f"
+    tagg        = "!f() { git tag -d $1; git tag $1; }; f"
+    goto        = "!f() { git co -b temp_Branch_D0nV1; git reset --soft $1; git co $1; git br -D temp_Branch_D0nV1; }; f"
     gr          = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    ; gr          = "!f() { git-graph; }; f"
     grdate      = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=format:'%Y-%m-%d %H:%M:%S'
     l1          = log1
     last        = log -1 HEAD --stat
@@ -63,7 +63,7 @@ alias
     lla         = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
     ll1         = ll -n 1
     log1        = log -n 1
-    move        = "!f() { git co -b temp_Branch_D0nV1; git reset --soft $1; git co $1; git br -D temp_Branch_D0nV1;}; f"
+    move        = "!f() { git co -b temp_Branch_D0nV1; git reset --soft $1; git co $1; git br -D temp_Branch_D0nV1; }; f"
     purge       = reflog expire --expire-unreachable=now --all
     ref         = log --reflog --pretty=format:"%h%x09%an%x09%ad%x09%s"
     ref2        = log --reflog --oneline
@@ -81,24 +81,24 @@ alias
     stapu       = stash push
     tree        = ls-tree -r master --name-only
 
-    # reset --hard to origin/<branch_name>
-    reso  = "!f() { branch_name=$(git rev-parse --abbrev-ref HEAD); git reset --hard origin/$branch_name; }; f"
-    comm  = "!f() { git com; git reset --hard origin/master; }; f"
-    fem   = "!f() { git fe; git comm; git coo; }; f"
-    upm   = "!f() { git comm; git coo; }; f"
+    reso  = "!f() { branch_name=$(git rev-parse --abbrev-ref HEAD); git reset --hard origin/$branch_name;  }; f"
+    comm  = "!f() { git com; git reset --hard origin/master;  }; f"
+    fem   = "!f() { git fe; git comm; git coo;  }; f"
+    upm   = "!f() { git comm; git coo;  }; f"
 
-    # worktree
-    # git worktree add $(branch_name)
-    # git worktree list
-    # git worktree remove $(branch_name)
-    wt    = "!f() { git worktree $1 $2;}; f"
+    wt    = "!f() { git worktree $1 $2; }; f"
 
-    # dot notation
-    ; new      = "lg master...HEAD"
-    new  = "!f() { branch_name=$(git rev-parse --abbrev-ref HEAD); git ll origin/$branch_name..head; }; f"
-    missing  = "!f() { branch_name=$(git rev-parse --abbrev-ref HEAD); git ll head..origin/$branch_name; }; f"
+    ; new  = "!f() { branch_name=$(git rev-parse --abbrev-ref HEAD); git ll origin/$branch_name..HEAD;  }; f"
+    ; missing  = "!f() { branch_name=$(git rev-parse --abbrev-ref HEAD); git ll HEAD..origin/$branch_name;  }; f"
+    new = ll origin/develop..HEAD
+    newm = ll origin/master..HEAD
+    missing = ll HEAD..origin/develop
+    missingm = ll HEAD..origin/master
 
-    # add changes to a git commit
     iter = ci -am "iter"
-    ii   = ci -am "iter"
+    cii  = ci -am "iter"
+
+    am  = ci -a --am
+
+    customcmd = "!f() { git ci .github/workflows/backend.yml -m \"testing actions $1\" && git push; }; f"
 ```
